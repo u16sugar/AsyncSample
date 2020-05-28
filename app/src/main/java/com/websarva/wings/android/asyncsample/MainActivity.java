@@ -40,40 +40,14 @@ public class MainActivity extends AppCompatActivity {
         List<Map<String, String>> cityList = new ArrayList<>();
         // 都市データを格納するMapオブジェクトの用意とCityListへのデータ登録
         Map<String, String> city = new HashMap<>();
-//        city = new HashMap<>();
-        city.put("name", "福島");
-        city.put("id", "070010");
-        cityList.add(city);
-        city = new HashMap<>();
-        city.put("name", "さいたま");
-        city.put("id", "110010");
-        cityList.add(city);
-        city = new HashMap<>();
-        city.put("name", "東京");
-        city.put("id", "130010");
-        cityList.add(city);
-        city = new HashMap<>();
         city.put("name", "大阪");
         city.put("id", "270000");
         cityList.add(city);
         city = new HashMap<>();
-        city.put("name", "銚子");
-        city.put("id", "120020");
+        city.put("name", "神戸");
+        city.put("id", "280010");
         cityList.add(city);
-        city = new HashMap<>();
-        city.put("name", "館山");
-        city.put("id", "120030");
-        cityList.add(city);
-        city = new HashMap<>();
-        city.put("name", "八丈島");
-        city.put("id", "130030");
-        cityList.add(city);
-        city = new HashMap<>();
-        city.put("name", "父島");
-        city.put("id", "130040");
-        cityList.add(city);
-
-
+//        データ挿入繰り返し
         String[] from = {"name"};
         int[] to = {android.R.id.text1};
         // Simple Adapterを生成
@@ -156,21 +130,17 @@ public class MainActivity extends AppCompatActivity {
                 result = is2String(is);
 
             } catch (MalformedURLException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             }
             finally {
                 // HttpURLConnectionオブジェクトがnullでないなら解放
                 if(con != null) {
-                    con.disconnect();
-                }
-                // InputStreamオブジェクトがnullでないなら解放
-                if(is != null) {
                     try {
                         is.close();
-                    } catch (IOException ex) {
-//                        ex.printStackTrace();
+                    } catch (IOException e) {
+//                        e.printStackTrace();
                     }
                 }
             }
